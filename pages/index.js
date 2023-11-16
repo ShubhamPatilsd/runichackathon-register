@@ -176,7 +176,7 @@ export default function Register({ notFound, registrationRecord, params }) {
                                   color: '#555',
                                   fontWeight: '500',
                                   mb: 2,
-                                  fontFamily: `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif`
+                                  fontFamily: `Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif`
                                 }}
                                 as="p"
                               >
