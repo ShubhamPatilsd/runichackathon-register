@@ -24,7 +24,7 @@ import { toast, ToastContainer } from 'react-nextjs-toast'
 
 export default function Register({ notFound, registrationRecord, params }) {
   const [data, setData] = useState({})
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(false)
 
   let keys = manifest.questions.flatMap(x => x.items.map(y => y.key))
 
@@ -59,7 +59,7 @@ export default function Register({ notFound, registrationRecord, params }) {
               }}
               as="div"
             >
-              Join The Waitlist For{' '}
+              Register For{' '}
               <Text
                 sx={{
                   textDecoration: 'none',
@@ -68,7 +68,7 @@ export default function Register({ notFound, registrationRecord, params }) {
                 }}
                 onClick={() => window.open('https://assemble.hackclub.com')}
               >
-                Assemble
+                Runic
               </Text>
               !
             </Text>
@@ -86,11 +86,6 @@ export default function Register({ notFound, registrationRecord, params }) {
         </Box>
       </Card>
       <Card px={[4, 4]} py={[4, 4]} mt={4}>
-        <Box bg="red" p={3} mb={3} sx={{ borderRadius: 3, color: 'white' }}>
-          👋 Hey there! Thanks for checking out Assemble. The weekend of August 5th
-          2022 was magical. Its spirit now lives on in high school hackathons 
-          around the world, <a href="https://hackathons.hackclub.com" style={{color: 'white'}}>join them here</a>.
-        </Box>
         <Box bg="sunken" p={3} mb={3} sx={{ borderRadius: 3 }}>
           This summer, we’re going to return in-person high-school hackathons to
           San Francisco. Our goal is to kick off a new renaissance.
@@ -103,9 +98,9 @@ export default function Register({ notFound, registrationRecord, params }) {
           <br />
           <br />
           Over the weekend, you’ll explore the Bay Area during your free time,
-          hack with co-conspirators and experience
-          the energy of being in-person again. Together, we’ll Assemble to form
-          the first IRL high school hackathon on this side of the pandemic.
+          hack with co-conspirators and experience the energy of being in-person
+          again. Together, we’ll Assemble to form the first IRL high school
+          hackathon on this side of the pandemic.
           <br />
           <br />
           We're so excited to meet you at Assemble this summer. Please fill out
@@ -123,7 +118,10 @@ export default function Register({ notFound, registrationRecord, params }) {
           return (
             <Box
               key={sectionIndex}
-              sx={{ mb: sectionIndex == manifest.questions.length -1 ? 4 : 5, mt: sectionIndex == 0 ? 4 : 5 }}
+              sx={{
+                mb: sectionIndex == manifest.questions.length - 1 ? 4 : 5,
+                mt: sectionIndex == 0 ? 4 : 5
+              }}
             >
               <Box sx={{ textAlign: 'left', mb: 2 }}>
                 <Text sx={{ color: 'red', fontSize: '27px', fontWeight: 800 }}>
@@ -261,8 +259,11 @@ export default function Register({ notFound, registrationRecord, params }) {
         })}
         <Button
           onClick={() => {
-            setDisabled(true);
-            toast.notify('Submitting your registration...', { duration: 60, title: 'Working...' })
+            setDisabled(true)
+            toast.notify('Submitting your registration...', {
+              duration: 60,
+              title: 'Working...'
+            })
             console.log(data)
             fetch('/api/submit', {
               method: 'POST',
@@ -272,15 +273,19 @@ export default function Register({ notFound, registrationRecord, params }) {
               body: JSON.stringify(data)
             })
               .then(response => response.json())
-              .then(
-                ({ success, error }) => {
-                  setDisabled(false);
-                  success ? window.location.replace('/success') : toast.notify(error, { type: 'error', title: 'Oops!', duration: 60 })
-                }
-              )
+              .then(({ success, error }) => {
+                setDisabled(false)
+                success
+                  ? window.location.replace('/success')
+                  : toast.notify(error, {
+                      type: 'error',
+                      title: 'Oops!',
+                      duration: 60
+                    })
+              })
           }}
           style={{
-            filter: true ? 'grayscale(1)' : 'grayscale(0)',
+            filter: true ? 'grayscale(1)' : 'grayscale(0)'
           }}
           disabled={true}
         >
