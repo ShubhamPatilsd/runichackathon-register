@@ -20,11 +20,11 @@ export default class App extends NextApp {
           name="Join Us At Runic!" // site name
           title="Join Us At Runic!" // page title
           description="" // page description
-          image="https://cloud-bs04w09ot-hack-club-bot.vercel.app/0image.png" // large summary card image URL
-          color="#ec3750" // theme color
+          image="/link-image.png" // large summary card image URL
+          color="#7100E1" // theme color
         />
         <Flag />
-        <NProgress color={'#ec3750'} />
+        <NProgress color={'#7100E1'} />
         <ForceTheme theme="light" />
         <div
           style={{
