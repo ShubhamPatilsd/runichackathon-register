@@ -54,7 +54,7 @@ export default function Register({ notFound, registrationRecord, params }) {
             width: '100%'
           }}
         >
-          <img src="/runic.svg" style={{ maxWidth: '200px', width: '45vw' }} />
+          <img src="/logo.svg" style={{ maxWidth: '200px', width: '45vw' }} />
         </div>
         <Box sx={{ display: ['block', 'flex'], alignItems: 'center' }}>
           <Flex sx={{ alignItems: 'center', flexGrow: 1 }}>
