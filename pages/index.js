@@ -21,6 +21,7 @@ import { manifest, requiredList } from '../lib/manifest.js'
 import nookies from 'nookies'
 import { useRouter } from 'next/router'
 import { toast, ToastContainer } from 'react-nextjs-toast'
+import theme from '@hackclub/theme'
 
 export default function Register({ notFound, registrationRecord, params }) {
   const [data, setData] = useState({})
@@ -44,12 +45,24 @@ export default function Register({ notFound, registrationRecord, params }) {
           textAlign: 'left'
         }}
       >
+        <div
+          style={{
+            display: ['flex'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingBottom: '20px',
+            width: '100%'
+          }}
+        >
+          <img src="/runic.svg" style={{ maxWidth: '200px', width: '45vw' }} />
+        </div>
         <Box sx={{ display: ['block', 'flex'], alignItems: 'center' }}>
           <Flex sx={{ alignItems: 'center', flexGrow: 1 }}>
             <Text
               variant="subheadline"
               sx={{
                 fontWeight: 900,
+                color: 'blue',
                 mb: 0,
                 flexGrow: 1,
                 ml: 2,
@@ -63,10 +76,10 @@ export default function Register({ notFound, registrationRecord, params }) {
               <Text
                 sx={{
                   textDecoration: 'none',
-                  color: 'blue',
+                  color: 'red',
                   cursor: 'pointer'
                 }}
-                onClick={() => window.open('https://assemble.hackclub.com')}
+                onClick={() => window.open('https://runic.rsvp')}
               >
                 Runic
               </Text>
@@ -87,26 +100,29 @@ export default function Register({ notFound, registrationRecord, params }) {
       </Card>
       <Card px={[4, 4]} py={[4, 4]} mt={4}>
         <Box bg="sunken" p={3} mb={3} sx={{ borderRadius: 3 }}>
-          This summer, we’re going to return in-person high-school hackathons to
-          San Francisco. Our goal is to kick off a new renaissance.
+          <strong>
+            On January 20-21, we're going to be hosting an amazing hackathon in
+            San Francisco.
+          </strong>
+          {/* <br />
+          <br /> */}{' '}
+          Consider this an invitation for you to come out and join us. We'll be
+          hacking from January 20 12:00pm to January 21 12:00pm—a whole 24 hours
+          of fun.
+          {/* We’ll be hosted at the fantastic Figma HQ on Market Street in
+          the heart of San Francisco. */}
           <br />
           <br />
-          We invite you to come out and join us. Not through Zoom or Discord,
-          but IRL out in the Bay Area from August 5th 6:00pm to August 7th
-          12:00pm. We’ll be hosted at the fantastic Figma HQ on Market Street in
-          the heart of San Francisco.
+          Over the weekend, you’ll explore the amazing world of code by hacking
+          with co-conspirators and experiencing the energy (drinks) working on
+          an innovative project. It's going to be an amazing time and we hope
+          that you can be a part of it.
           <br />
           <br />
-          Over the weekend, you’ll explore the Bay Area during your free time,
-          hack with co-conspirators and experience the energy of being in-person
-          again. Together, we’ll Assemble to form the first IRL high school
-          hackathon on this side of the pandemic.
-          <br />
-          <br />
-          We're so excited to meet you at Assemble this summer. Please fill out
-          the registration form below to help us make the event magical for you.
+          We're so excited to meet you at Runic. Please fill out the
+          registration form below to help us make the event magical for you.
           Feel free to contact{' '}
-          <a href="mailto:assemble@hackclub.com">assemble@hackclub.com</a> for
+          <a href="mailto:questions@runic.rsvp">questions@runic.rsvp</a> for
           help!
         </Box>
         {manifest.questions.map((sectionItem, sectionIndex) => {
@@ -172,11 +188,11 @@ export default function Register({ notFound, registrationRecord, params }) {
                             {item.sublabel && (
                               <Text
                                 sx={{
-                                  fontSize: '15px',
+                                  fontSize: '14px',
                                   color: '#555',
                                   fontWeight: '500',
                                   mb: 2,
-                                  fontFamily: `Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif`
+                                  fontFamily: `DM Sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif`
                                 }}
                                 as="p"
                               >
@@ -287,7 +303,7 @@ export default function Register({ notFound, registrationRecord, params }) {
           style={{
             filter: true ? 'grayscale(1)' : 'grayscale(0)'
           }}
-          disabled={true}
+          disabled={false}
         >
           Submit
         </Button>

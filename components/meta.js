@@ -5,8 +5,8 @@ const makeTitle = (title, name) =>
 
 const Meta = ({
   as: ElementType = React.Fragment,
-  name = 'Hack Club', // site name
-  title = 'Hack Club', // page title
+  name = 'Runic', // site name
+  title = 'Runic', // page title
   description,
   image,
   color = '#ec3750',
@@ -41,21 +41,9 @@ const Meta = ({
     )}
     <meta key="theme_color" name="theme-color" content={color} />
     <meta key="tile_color" name="msapplication-TileColor" content={color} />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="/favicon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/favicon.png"
-    />
-    <link
-      rel="favicon"
-      type="image/png"
-      href="/favicon.png"
-    />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="favicon" type="image/png" href="/favicon.png" />
     {manifest && <link key="manifest" rel="manifest" href={manifest} />}
     {children}
   </ElementType>

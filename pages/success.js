@@ -33,15 +33,16 @@ export default function Register({ notFound, registrationRecord, params }) {
         </Text>
         <br />
         <Text>
-          ❤️ You're on the waitlist! We really hope we can meet you! Make sure you check your email in
-          the coming days and weeks for important updates. Also, check out the{' '}
+          ❤️ You're on the waitlist! We really hope we can meet you! Make sure
+          you check your email in the coming days and weeks for important
+          updates. Also, check out the{' '}
           <Text
             as={'a'}
-            href="https://hackclub.com/slack"
+            href="https://discord.gg/RQM2dsehS9"
             target="_blank"
             sx={{ color: 'red' }}
           >
-            Hack Club Slack
+            Discord
           </Text>{' '}
           if you'd like to meet other hackers.
         </Text>
